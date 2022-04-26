@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tan_WageCalculator">
         <activity
+            android:name=".Display"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

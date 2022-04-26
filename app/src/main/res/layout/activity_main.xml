@@ -13,9 +13,10 @@
         android:id="@+id/InsertName"
         android:layout_width="125dp"
         android:layout_height="49dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="132dp"
         android:text="Insert Name:"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,18 +27,20 @@
         android:text="Worked Hours:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.72" />
+        app:layout_constraintVertical_bias="0.468" />
 
     <TextView
         android:id="@+id/empTypes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="208dp"
-        android:text="Employee Class: (Check one only)"
+        android:text="Employee Class:"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,35 +60,37 @@
 
     <Button
         android:id="@+id/CalculateWage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="185dp"
+        android:layout_height="60dp"
         android:text="Calculate Wage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.857" />
+        app:layout_constraintVertical_bias="0.764" />
 
     <RadioGroup
         android:layout_width="141dp"
+        android:id ="@+id/employeeTypes"
         android:layout_height="145dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RadioButton
-            android:id="@+id/fullTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Full Time" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.459">
 
         <RadioButton
             android:id="@+id/partTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Part-Time" />
+
+        <RadioButton
+            android:id="@+id/fullTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Full Time" />
 
         <RadioButton
             android:id="@+id/probationary"

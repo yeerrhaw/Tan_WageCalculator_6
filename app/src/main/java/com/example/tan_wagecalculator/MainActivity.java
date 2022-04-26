@@ -6,18 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.Checkable;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import java.util.zip.Checksum;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText InsertName, WorkedHours;
-    RadioButton fullTime, partTime, probationary;
-    RadioGroup empTypes;
+    RadioButton btnSelected;
+    RadioGroup employeeTypes;
     Button CalculateWage;
 
 
@@ -32,10 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         WorkedHours = findViewById(R.id.WorkedHours);
 
         //RadioGroup
-        fullTime = findViewById(R.id.fullTime);
-        partTime = findViewById(R.id.partTime);
-        probationary = findViewById(R.id.probationary);
-
+        employeeTypes = findViewById(R.id.employeeTypes);
 
         //Button
         CalculateWage = findViewById(R.id.CalculateWage);
@@ -53,18 +46,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.CalculateWage:
-                int selectedEmployeeType = empTypes.getCheckedRadioButtonId();
+                int SelectedEmployeeType = employeeTypes.getCheckedRadioButtonId();
 
-                fullTime = findViewById(selectedEmployeeType);
-                partTime = findViewById(selectedEmployeeType);
-                probationary = findViewById(selectedEmployeeType);
+               btnSelected = findViewById(SelectedEmployeeType);
 
-
-                String type1= fullTime.getText().toString();
-                String type2= partTime.getText().toString();
-                String type3=probationary.getText().toString();
-                String name = InsertName.getText().toString();
-                String totalHours =WorkedHours.getText().toString();
+                String type = (btnSelected.getText().toString());
+                String name = (InsertName.getText().toString());
+                String totalHours = WorkedHours.getText().toString();
 
 
 
@@ -73,9 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 intent.putExtra("empName", name);
                 intent.putExtra("hours", totalHours);
-                intent.putExtra("fullTime",type1);
-                intent.putExtra("partTime",type2);
-                intent.putExtra("probationary",type3);
+                intent.putExtra("type",type);
                 startActivity(intent);
 
                 break;

@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Display extends AppCompatActivity {
 
 
-    TextView txtName,txtType,txtHours,txtWage;
+    TextView txtemployeeName,txtemployeeType,txthoursWorked,txtwageTotal,txttotalOTWage,txttotalOTHours;
 
 
     @Override
@@ -20,10 +20,12 @@ public class Display extends AppCompatActivity {
     setContentView(R.layout.activity_display);
 
 
-        txtName = findViewById(R.id.InsertName);
-        txtType = findViewById(R.id.empTypes);
-        txtHours = findViewById(R.id.WorkedHours);
-        txtWage = findViewById(R.id.CalculateWage);
+        txtemployeeName= findViewById(R.id.InsertName);
+        txtemployeeType = findViewById(R.id.empTypes);
+        txthoursWorked = findViewById(R.id.WorkedHours);
+        txtwageTotal = findViewById(R.id.CalculateWage);
+        txttotalOTWage = findViewById(R.id.totalOTwage);
+        txttotalOTHours = findViewById(R.id.totalOThours);
 
 
         Intent i = getIntent();
@@ -33,11 +35,11 @@ public class Display extends AppCompatActivity {
         Double EmployeeHours = Double.parseDouble(i.getStringExtra("hours"));
 
 
-        txtName.setText("Employee Name: " +EmployeeName);
-        txtType.setText("Employee Type: " + String.valueOf(empTypes));
-        txtHours.setText("Hours Rendered: "+ String.valueOf(EmployeeHours));
+        txtemployeeName.setText("Employee Name: " +EmployeeName);
+        txtemployeeType.setText("Employee Type: " + String.valueOf(empTypes));
+        txthoursWorked.setText("Hours Rendered: "+ String.valueOf(EmployeeHours));
 
-        calcWage (empTypes,EmployeeHours,txtWage);
+        calcWage (empTypes,EmployeeHours,txtwageTotal);
 
     } public void calcWage(String empTypes, Double WorkedHours, TextView txtWage){
             Double totalWage = 0.0;
